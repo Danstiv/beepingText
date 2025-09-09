@@ -12,11 +12,11 @@ beep_command = commands.BeepCommand(150, 10)
 class GlobalPlugin(GlobalPlugin):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        add_settings(self.on_save_config)
+        # add_settings(self.on_save_config)
         pre_speechQueued.register(self.on_speech)
 
     def terminate(self):
-        remove_settings()
+        # remove_settings()
         pre_speechQueued.unregister(self.on_speech)
 
     def on_speech(self, speechSequence):
