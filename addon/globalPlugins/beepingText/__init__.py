@@ -20,17 +20,11 @@ class GlobalPlugin(GlobalPlugin):
         pre_speechQueued.unregister(self.on_speech)
 
     def on_speech(self, speechSequence):
-        import time
-
-        start_time = time.time()
-
         REPLACEMENT_MARKER = processText(
             getCurrentLanguage(),
             "---<replaced>---",
             characterProcessing.SymbolLevel(config.conf["speech"]["symbolLevel"]),
         )
-        print(round(time.time() - start_time, 6))
-
         insertion_points = []
         for i, item in enumerate(speechSequence):
             # print(item)
