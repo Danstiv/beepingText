@@ -18,7 +18,7 @@ This addon allows to replace the text with beep, and thus, the user will always 
 ## How to use
 Simply add a new entry to the NVDA speech dictionary, but use special marker for replacement.
 
-Currently the marker is: ---<replaced>---
+Currently the marker is: @replaced@
 
 It can be made configurable in the future.
 
@@ -39,6 +39,6 @@ As the result will receive the following text: `level=info msg="Start initial co
 But we also could use more advanced replacement technique.
 
 Regex: `time="\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d.\d{9}\+\d\d:\d\d" level=(info|warning|error) msg="(.*?)"`
-Replacement: `---<replaced>---\1 \2`
+Replacement: `@replaced@\1 \2`
 
 Thus: we can use all the capabilities of speech dictionaries, while each replaced phrase will be marked by beep, which will not allow to miss an unexpected replacement.
