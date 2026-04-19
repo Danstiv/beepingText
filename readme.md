@@ -42,3 +42,14 @@ Regex: `time="\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d.\d{9}\+\d\d:\d\d" level=(info|warni
 Replacement: `@replace_with_beep@\1 \2`
 
 Thus: we can use all the capabilities of speech dictionaries, while each replaced phrase will be marked by beep, which will not allow to miss an unexpected replacement.
+
+## Available markers
+- `@replace_with_beep@` - replace marker with short beep.
+- `@lower_pitch@` - replace marker with change pitch command in the speech sequence, that lowers the speech pitch.
+- `@restore_pitch@` - replace marker with change pitch command in the speech sequence, that restores speech pitch to normal.
+
+## Examples
+### Read emoji with lower pitch
+Regex: `((?:[\U0001F600-\U0001F64F]|[\U0001F300-\U0001F5FF]|[\U0001F680-\U0001F6FF]|[\U00002600-\U000026FF]|[\U00002700-\U000027BF])+)`
+
+Replacement: `@lower_pitch@\1@restore_pitch@`
