@@ -22,7 +22,7 @@ def _generate_marker(raw_marker: str):
     )
 
 
-BEEP_REPLACEMENT_MARKER = _generate_marker("@replaced@")
+BEEP_REPLACEMENT_MARKER = _generate_marker("@replace_with_beep@")
 LOWER_PITCH_MARKER = _generate_marker("@lower_pitch@")
 RESTORE_PITCH_MARKER = _generate_marker("@restore_pitch@")
 MARKERS_COMMANDS_MAP = {
